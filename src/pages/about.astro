@@ -1,0 +1,44 @@
+---
+import Footer from '../components/Footer.astro';
+import Sidebar from '../components/Sidebar.astro';
+import BaseHead from '../components/BaseHead.astro';
+import { Image } from 'astro:assets';
+import  jamie_profile from '../assets/pictures/jamie_profile_picture.webp';
+
+
+const { title, description } = Astro.props;
+
+---
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		
+	</head>
+
+	<body class="bg-bg-green">
+		<Sidebar />
+		<main class="flex flex-col w-full justify-items-center items-center sm:pl-[120px]" >
+			<!-- 120px to right div for Sidebar -->
+			<div class="pt-20 sm:w-4/5">
+				<div class="flex justify-center p-5 sm:p-10">
+					<Image class='about_image' src={jamie_profile} width="1200" alt="jamie"/>
+				</div>
+				<div class=" flex flex-col items-center p-5 sm:p-10">
+					<h1 transition:name="myName" class="text-tan text-4xl font-notoSans font-bold">Hi, my name is Jamie. </h1>
+					<p class="pt-10  text-smoke-white/80 font-hind ">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quisquam aperiam eius explicabo nemo dolores mollitia asperiores quae optio animi rerum velit ipsam unde est ea corrupti. Recusandae voluptatem cupiditate, pariatur ab reiciendis vitae numquam eligendi similique natus, nobis perspiciatis atque ex officiis aperiam accusamus! Omnis magnam, aspernatur minima cupiditate blanditiis fugiat? Ipsa fugit quo aperiam qui nam! Modi et porro similique tenetur odit qui neque consectetur voluptatum accusamus quam quidem maiores molestiae culpa dolorem amet vero facilis voluptate, nam minima? Temporibus officia deleniti vero asperiores. Doloribus praesentium nihil doloremque deserunt voluptates incidunt illo hic quaerat dolorem, consequatur eveniet suscipit.</p>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.about_image {
+		border-radius: 3%;
+		
+	}
+</style>
+
+
+	
