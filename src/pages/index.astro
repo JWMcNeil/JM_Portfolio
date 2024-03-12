@@ -1,62 +1,51 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Sidebar from '../components/Sidebar.astro';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Blobs from '../components/Blobs.astro';
+import Typewriter from '../components/Typewriter.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 import { Image } from 'astro:assets';
 import cafeRacer from '../assets/pictures/small-cafe-racer-jamie.webp';
 ---
+<BaseLayout>
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="min-h-screen bg-bg-green">
-		<div class="wrapper flex flex-col flex-grow relative h-screen w-svw">
-			<!-- Sidebar -->
-			<Sidebar title={SITE_TITLE} />
-
-		<!-- Main content with 120px padding for Sidebar -->
-			<div class="flex flex-col flex-grow sm:pl-[120px]">
-
-				<main class="flex flex-col  justify-center items-center h-full w-full p-10 ">
-
-					<div class="flex flex-col lg:flex-row">
-						<!-- Heading and paragraph -->
-						<div class="lg:w-1/2 max-w-[500px] pt-10 pb-5">
-							<h1 transition:name="myName" class="font-notoSans font-black text-4xl text-tan pb-5">Hi, my name is Jamie.</h1>
-							<p class="font-hind text-smoke-white/80 pb-2">
-								I’m a videographer among other things. 
-							</p>
-							<p class="font-hind text-smoke-white/80">
-								Thanks for visiting, here you’ll find some of my work, ideas and ramblings on my blog! If you want to reach out to me then please don’t hesitate to do so. 
-							</p>
-						</div>	
+	<div class="flex flex-col justify-center items-start">
+		<div class="grid grid-cols-1 py-12 md:grid-cols-2">
+			<!-- Heading and paragraph -->
+			<div class="pt-10 pb-5">
+				<h1 transition:name="myName" class="font-notoSans font-black text-4xl pb-10 text-tan">Hi, my name is Jamie.</h1>
+				<div class="flex font-hind font-light text-smoke-white/80 pb-2">
+					I’m a&nbsp;<span><Typewriter /></span>&nbsp;among other things. 
+				</div>
+				<p class="w-96 font-hind font-light pb-10 text-smoke-white/80">
+					Thanks for visiting, here you’ll find some of my work, ideas and ramblings on my blog! If you want to reach out to me then please don’t hesitate to do so. 
+				</p>
+			</div>	
 	
-						<!-- Hero Image -->
-						<div>
-							<Image src={cafeRacer} alt="cafe racer motorcycle, with Jamie as the rider."/>
-						</div>
-					</div>
-					<!-- Links to examples of work -->
-					<div class="flex flex-col lg:flex-row">
-						<div class="flex flex-col gap-3 pt-5 max-w-[500px] sm:min-w-[500px] text-smoke-white/80">
-							<a class="hover:text-maya-blue transition duration-200 ease-in" href="http://"><span class="text-smoke-white/20">01</span> Mountain Pygmy Possum</a>
-							<a class="hover:text-maya-blue transition duration-200 ease-in" href="http://"><span class="text-smoke-white/20 ">02</span> Photography</a>
-							<a class="hover:text-maya-blue transition duration-200 ease-in" href="http://"><span class="text-smoke-white/20">03</span> William Eustace</a>
-							<a class="hover:text-maya-blue transition duration-200 ease-in" href="http://"><span class="text-smoke-white/20">04</span> Music</a>
-							<a class="hover:text-maya-blue transition duration-200 ease-in" href="http://"><span class="text-smoke-white/20">05</span> Coding Projects</a>
-						</div>
-						<div class="lg:min-w-[500px]">
-						</div>
-					</div>
-					
-				</main>
-				<Footer/>
+			<!-- Hero Image -->
+			<div class="relative">
+				<div class="">
+					<Image src={cafeRacer} alt="cafe racer motorcycle, with Jamie as the rider."/>
+				</div>
+				<div class="absolute top-0 right-0">
+					<Blobs />
+				</div>
 			</div>
 		</div>
-	</body>
-</html>
+		<!-- Links to examples of work -->
+		<div class="flex flex-col lg:flex-row">
+			<div class="flex flex-col gap-3 pt-5 font-thin max-w-full text-smoke-white/80">
+				<a class="hover:text-maya-blue transition duration-200 ease-in" href="http://"><span class="text-smoke-white/20">01</span> Mountain Pygmy Possum</a>
+				<a class="hover:text-maya-blue transition duration-200 ease-in" href="http://"><span class="text-smoke-white/20 ">02</span> Photography</a>
+				<a class="hover:text-maya-blue transition duration-200 ease-in" href="http://"><span class="text-smoke-white/20">03</span> William Eustace</a>
+				<a class="hover:text-maya-blue transition duration-200 ease-in" href="http://"><span class="text-smoke-white/20">04</span> Music</a>
+				<a class="hover:text-maya-blue transition duration-200 ease-in" href="http://"><span class="text-smoke-white/20">05</span> Coding Projects</a>
+			</div>
+			
+		</div>
+	</div>
+
+</BaseLayout>
+
+

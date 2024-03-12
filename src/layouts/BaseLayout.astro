@@ -1,0 +1,44 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import GrainyBG from '../components/GrainyBG.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{SITE_TITLE}</title>
+    </head>
+    <body class="bg-black | grid-container">
+        <Header />
+        <main class="flex flex-col justify-center items-center p-5">
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>
+<GrainyBG />
+
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: minmax(0, 120px) 3fr;
+        grid-template-rows: auto 1fr auto;
+
+        
+    }
+    
+
+    @media (width <= 640px ) {
+        .grid-container {
+        grid-template-columns: 1fr;
+        
+    }
+
+    }
+</style>

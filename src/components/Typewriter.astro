@@ -1,0 +1,53 @@
+---
+
+---
+
+<div id="typewriter" class="text-maya-blue font-thin"></div>
+
+<script>
+
+    const skills: string[] = ["videographer", "dev newbie", "passionate motorcyclist", "photographer", "musician"];
+    let currentIndex: number = 0;
+    let typewriterElement;
+
+    const typeWriter = (text: string, speed: number): void => {
+        let i: number = 0;
+        typewriterElement = document.getElementById("typewriter") as HTMLElement;
+        const typingInterval = setInterval(() => {
+            if (i < text.length) {
+                typewriterElement.textContent += text[i];
+                i++;
+            } else {
+                clearInterval(typingInterval);
+                setTimeout(() => {
+                    backspace(text);
+                }, 1700);
+            }
+        }, 200);
+
+    }
+
+
+const backspace = (text: string): void => {
+    const backspacingInterval = setInterval(() => {
+        if (text.length === 0 ) {
+            clearInterval(backspacingInterval);
+            currentIndex = (currentIndex + 1) % skills.length;
+            typeWriter(skills[currentIndex], 100);
+        } else {
+            const newText: string = text.substring(0, text.length - 1);
+            typewriterElement.textContent = newText;
+            text = newText;
+        }
+    }, 50);
+};
+
+
+    typeWriter(skills[currentIndex], 100);
+
+
+
+
+
+
+</script>
