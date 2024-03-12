@@ -10,7 +10,40 @@ const blog = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
+		isDraft: z.boolean().default(false),
 	}),
 });
 
-export const collections = { blog };
+const video = defineCollection({
+	type: 'content', 
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		pubDate: z.coerce.date(), 
+		heroImage: z.string().optional(),
+		videoUrl: z.string().optional(),
+		thumbnailUrl: z.string().optional(),
+		isDraft: z.boolean().default(false),
+	})
+})
+
+const photography = defineCollection({
+	type: 'content', 
+	schema: z.object({
+		title: z.string(), 
+		pubDate: z.coerce.date(), 
+		heroImage: z.string().optional(),
+	})
+})
+
+const webdev = defineCollection({
+	type: 'content', 
+	schema: z.object({
+		title: z.string(),
+		pubDate: z.coerce.date(), 
+		heroImage: z.string().optional(),
+
+	})
+})
+
+export const collections = { blog, video, photography, webdev };
