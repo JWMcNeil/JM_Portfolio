@@ -7,17 +7,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { Image } from 'astro:assets';
 import cafeRacer from '../assets/pictures/small-cafe-racer-jamie.webp';
 ---
-<BaseLayout>
+<BaseLayout title="JM-Home">
 
 	<div class="flex flex-col justify-center items-start">
 		<div class="grid grid-cols-1 py-12 md:grid-cols-2">
 			<!-- Heading and paragraph -->
-			<div class="pt-10 pb-5">
+			<div class="pt-5 pb-5">
 				<h1 transition:name="myName" class="font-notoSans font-black text-4xl pb-10 text-tan">Hi, my name is Jamie.</h1>
 				<div class="flex font-hind font-light text-smoke-white/80 pb-2">
 					I’m a&nbsp;<span><Typewriter /></span>&nbsp;among other things. 
 				</div>
-				<p class="w-96 font-hind font-light pb-10 text-smoke-white/80">
+				<p class="max-w-96 font-hind font-light pb-10 text-smoke-white/80">
 					Thanks for visiting, here you’ll find some of my work, ideas and ramblings on my blog! If you want to reach out to me then please don’t hesitate to do so. 
 				</p>
 			</div>	
