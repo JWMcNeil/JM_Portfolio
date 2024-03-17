@@ -9,16 +9,16 @@ const { title, description } = Astro.props;
 
 
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
-    <body class="bg-black | grid-container">
+    <body class="bg-black | grid-container h-dvh">
         <Header />
-        <main class="flex flex-col justify-center items-center p-5">
+        <main class="flex flex-col justify-center items-center flex-grow p-5">
             <slot />
         </main>
         <Footer />
