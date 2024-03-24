@@ -1,11 +1,24 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
+import theboys from "../../assets/pictures/pureriot-band.jpg";
+import { Picture } from "astro:assets";
 
 ---
 <BaseLayout title="JM-Music">
-    <section>
-        <h1 class="font-bold text-tan text-4xl">Music</h1>
-        <p class="text-smoke-white/80">Page coming soon.. and the story of <span class="font-black">EDA!</span></p>
-    </section>
+    <div class="h-svh">
+    <a class="  text-tan/50 underline hover:text-tan duration-200" href="/">home</a>
+        <div class="container pt-12">
+            
+            <section>
+                <h1 class="font-bold text-tan text-4xl">Music</h1>
+                <p class="text-smoke-white/80">Page coming soon.. and the story of <span class="font-black">EDA!</span></p>
+            </section>
+            <section>
+                <div class="pt-1.5">
+                    <Picture src={theboys} formats={['avif', 'webp']} alt="EDA band members" />
+                </div>
+                <span class="text-smoke-white font-light text-sm">Me ~ Chris, JP and John. Looking mighty serious...</span>
+            </section>
+        </div>
+    </div>
 </BaseLayout>

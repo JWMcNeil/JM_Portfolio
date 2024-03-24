@@ -17,11 +17,13 @@ const blog = defineCollection({
 
 const video = defineCollection({
 	type: 'content', 
-	schema: z.object({
+	schema: ({ image }) => z.object({
 		title: z.string(),
 		description: z.string(),
 		pubDate: z.coerce.date(), 
-		heroImage: z.string().optional(),
+		heroImage: image().refine((img) => img.width >= 1080, {
+			message: "heroImage needs to be 1080 pixels wide!"
+		}),
 		videoUrl: z.string().optional(),
 		thumbnailUrl: z.string().optional(),
 		isDraft: z.boolean().default(false),

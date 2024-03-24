@@ -5,7 +5,7 @@ import { Image } from 'astro:assets';
 import jamieAvatar from '../assets/pictures/Jamie_circle_100x100.webp';
 ---
 
-<header>
+<header >
     <!-- Mobile Burger Button -->
     <div class="burger fixed right-0 z-20 m-4 sm:hidden">
         <div class="bar1 h-1 w-10 my-1.5 bg-smoke-white duration-300"></div>
@@ -50,43 +50,47 @@ import jamieAvatar from '../assets/pictures/Jamie_circle_100x100.webp';
 
 
 <script>
-    const burger = document.querySelector('.burger');
-    const sidebar = document.querySelector('.sidebar');
-    const bar1 = document.querySelector('.bar1');
-    const bar2 = document.querySelector('.bar2');
-    const bar3 = document.querySelector('.bar3');
+    document.addEventListener('astro:page-load', () => {
 
-    // Function to toggle the sidebar and burger menu
-    const toggleSidebar = () => {
-        
-        if (sidebar?.classList.contains('translate-x-0')) {
-            // Sidebar is open, so close it
-            sidebar.classList.remove('translate-x-0');
-            bar1?.classList.remove('transform', 'translate-y-1.5', '-rotate-45');
-            bar2?.classList.remove('hidden');
-            bar3?.classList.remove('transform', '-translate-y-1', 'rotate-45');
-        } else {
-            // Sidebar is closed, so open it
-            sidebar?.classList.add('translate-x-0');
-            bar1?.classList.add('transform', 'translate-y-1.5', '-rotate-45');
-            bar2?.classList.add('hidden');
-            bar3?.classList.add('transform', '-translate-y-1', 'rotate-45');
-        }
-    };
 
-    function initializeBurgerMenu() {
-    const burger = document.querySelector('.burger');
-    burger?.addEventListener('click', (event) => {
-        // Stop event propagation
-        event.stopPropagation();
-        // Toggle sidebar
-        toggleSidebar();
+        const burger = document.querySelector('.burger');
+        const sidebar = document.querySelector('.sidebar');
+        const bar1 = document.querySelector('.bar1');
+        const bar2 = document.querySelector('.bar2');
+        const bar3 = document.querySelector('.bar3');
+    
+        // Function to toggle the sidebar and burger menu
+        const toggleSidebar = () => {
+            
+            if (sidebar?.classList.contains('translate-x-0')) {
+                // Sidebar is open, so close it
+                sidebar.classList.remove('translate-x-0');
+                bar1?.classList.remove('transform', 'translate-y-1.5', '-rotate-45');
+                bar2?.classList.remove('hidden');
+                bar3?.classList.remove('transform', '-translate-y-1', 'rotate-45');
+            } else {
+                // Sidebar is closed, so open it
+                sidebar?.classList.add('translate-x-0');
+                bar1?.classList.add('transform', 'translate-y-1.5', '-rotate-45');
+                bar2?.classList.add('hidden');
+                bar3?.classList.add('transform', '-translate-y-1', 'rotate-45');
+            }
+        };
+    
+        function initializeBurgerMenu() {
+        const burger = document.querySelector('.burger');
+        burger?.addEventListener('click', (event) => {
+            // Stop event propagation
+            event.stopPropagation();
+            // Toggle sidebar
+            toggleSidebar();
+        });
+      }
+      initializeBurgerMenu();
+      // Reinitialize burger menu event listener on page load
+    //   document.addEventListener('astro:page-load', () => {
+    //     // Reinitialize burger menu event listener
+    //     initializeBurgerMenu();
+    //   });
     });
-  }
-  initializeBurgerMenu();
-  // Reinitialize burger menu event listener on page load
-  document.addEventListener('astro:page-load', () => {
-    // Reinitialize burger menu event listener
-    initializeBurgerMenu();
-  });
 </script>
