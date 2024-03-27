@@ -1,5 +1,5 @@
-import { imageConfig } from 'astro:assets';
-import { defineCollection, z } from 'astro:content';
+
+import { defineCollection, reference, z } from 'astro:content';
 
 const blog = defineCollection({
 	type: 'content',
@@ -20,6 +20,8 @@ const video = defineCollection({
 	schema: ({ image }) => z.object({
 		title: z.string(),
 		description: z.string(),
+		author: z.string(),
+		client: z.string().optional(),
 		pubDate: z.coerce.date(), 
 		heroImage: image().refine((img) => img.width >= 1080, {
 			message: "heroImage needs to be 1080 pixels wide!"
@@ -35,9 +37,14 @@ const photography = defineCollection({
 	schema: ({ image }) => z.object({
 		title: z.string(), 
 		pubDate: z.coerce.date(), 
+		description: z.string().optional(),
 		heroImage: image().refine((img) => img.width >= 1080, {
 			message: "heroImage needs to be 1080 pixels wide!"
-		})
+		}),
+		location: z.string().optional(),
+		camera: z.string().optional(),
+		lenses: z.string().optional(),
+
 	})
 })
 
@@ -50,5 +57,6 @@ const webdev = defineCollection({
 
 	})
 })
+
 
 export const collections = { blog, video, photography, webdev };

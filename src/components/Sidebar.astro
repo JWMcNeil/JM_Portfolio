@@ -2,7 +2,7 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import { Image } from 'astro:assets';
-import jamieAvatar from '../assets/pictures/Jamie_circle_100x100.webp';
+import jamieAvatar from '../assets/pictures/JM-Avatar.png';
 ---
 
 <header >
@@ -18,18 +18,31 @@ import jamieAvatar from '../assets/pictures/Jamie_circle_100x100.webp';
         <div class=" flex flex-col h-full w-full place-content-between bg-black">
             <!-- Avatar -->
             <div class="flex place-content-center items-center w-[119px] h-[120px] border-b border-solid border-smoke-white/10">
-            <Image src={jamieAvatar} alt="Jamie" width="100" height="100"/></div>
+            <div class="w-10/12">
+                
+                <Image src={jamieAvatar} alt="Jamie"  quality="high"/></div>
+            </div>    
             <!-- Links container -->
-            <div class="h-1/3 w-[119px] border-t border-b border-solid border-smoke-white/20 text-smoke-white font-hind ">
-                <div class="flex items-center place-content-center h-1/3 border-b border-solid border-smoke-white/10">
+            <div class=" w-[119px] border-t border-b border-solid border-smoke-white/20 text-smoke-white font-hind ">
+                <div class="flex items-center place-content-center py-3 border-b border-solid border-smoke-white/10">
                     <HeaderLink href="/">Home</HeaderLink>
                 </div>
-                <div class="flex items-center place-content-center h-1/3 border-b border-solid border-smoke-white/10">
+                <div class="flex items-center place-content-center py-3 border-b border-solid border-smoke-white/10">
                     <HeaderLink href="/about">About</HeaderLink>
                 </div>
-                <div class=" flex items-center place-content-center h-1/3 ">
+                <div class="flex items-center place-content-center py-3 border-b border-solid border-smoke-white/10">
+                    <HeaderLink href="/video">Video</HeaderLink>
+                </div>
+                <div class="flex items-center place-content-center py-3 border-b border-solid border-smoke-white/10">
+                    <HeaderLink href="/photography">Photo</HeaderLink>
+                </div>
+                <div class=" flex items-center place-content-center py-3 border-b border-solid border-smoke-white/10">
+                    <HeaderLink href="/webdev">Web</HeaderLink>
+                </div>
+                <div class=" flex items-center place-content-center py-3  ">
                     <HeaderLink href="/blog">Blog</HeaderLink>
                 </div>
+                
             </div>
             <!-- Social @ email container -->
             <div class="flex flex-col place-content-center items-center h-[120px] w-[120px] ">

@@ -17,6 +17,12 @@ const posts = (await getCollection('video')).sort(
 <div class="">
 
 	<a class=" text-tan/50 underline hover:text-tan duration-200" href="/">home</a>
+	<div class="pt-10 max-w-4xl">
+		<h1 class="font-bold text-tan text-4xl">Video</h1>
+		<p class="text-smoke-white/80 pt-5">This a small collection of my favorite videos that I have worked on over the years. This is the work of <span class="font-black text-tan">Chaos and Nox</span>, my video production business I operate with my partner, Kim :)</p>
+
+		
+	</div>
 	<section class="pt-12 max-w-4xl">
 		<ul>
 			{
@@ -30,6 +36,7 @@ const posts = (await getCollection('video')).sort(
 							<p class="text-slate-500">
 								<FormattedDate date={post.data.pubDate} />
 							</p>
+						
 						</a>
 					</li>
 				))
