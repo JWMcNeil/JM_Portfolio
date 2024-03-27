@@ -53,6 +53,7 @@ const webdev = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		pubDate: z.coerce.date(), 
+		status: z.string(),
 		heroImage: z.string().optional(),
 
 	})
