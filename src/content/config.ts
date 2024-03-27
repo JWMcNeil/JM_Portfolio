@@ -50,11 +50,14 @@ const photography = defineCollection({
 
 const webdev = defineCollection({
 	type: 'content', 
-	schema: z.object({
+	schema: ({ image }) =>z.object({
 		title: z.string(),
 		pubDate: z.coerce.date(), 
 		status: z.string(),
-		heroImage: z.string().optional(),
+		description: z.string().optional(),
+		heroImage: image().refine((img) => img.width >= 1080, {
+			message: "heroImage needs to be 1080 pixels wide!"
+		}),
 
 	})
 })
