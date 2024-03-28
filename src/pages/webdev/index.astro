@@ -16,7 +16,20 @@ const posts = (await getCollection('webdev')).sort(
 <BaseLayout title="JM-Webdev">
 	<div class="">
 		<a class=" text-tan/50 underline hover:text-tan duration-200" href="/">home</a>
+		<div class="pt-10 max-w-4xl">
+			<h1 class="font-bold text-tan text-4xl">Web</h1>
+			<p class="text-smoke-white/80 pt-5">During the pandemic, I decided to learn a skill that I have always wanted to have, web developement!</p>
+			<br>
+			<p class="text-smoke-white/80">I signed up to a bootcamp <span class="text-slate-400 italic">(thoughts on that coming to my blog, it ain't high praise tbh)</span> and I began the journey. Since then I have been dabbling in different web frameworks, platforms and of course learning all the fundemantals.</p>
+			<br>
+			<p class="text-smoke-white/80">As of today I'm really enjoying using <span class="font-black text-tan">Astro 🚀</span>, that's what this website is built with.</p>
+			<br>
+			<p class="text-smoke-white/80">I've also spent sometime in no-code/low-code platforms like Webflow. I think its a great choice also, albeit quite expensive for quick simple web projects.</p>
+	
+			
+		</div>
 		<section class="pt-12 max-w-4xl">
+			
 			<ul>
 				{
 					posts.map((post) => (
