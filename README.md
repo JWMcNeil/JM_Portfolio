@@ -5,11 +5,11 @@ Feel free to poke around and see what I've done well, and what I've definitely d
 
 Stuff about:
 
-📷 - cameras, video and photography
-🚀 - web development 
-🎸 - music
-🏍 - motorbikes
-✈️ - travel
++ 📷 - cameras, video and photography
++ 🚀 - web development 
++ 🎸 - music
++ 🏍 - motorbikes
++ ✈️ - travel
 
 
 
