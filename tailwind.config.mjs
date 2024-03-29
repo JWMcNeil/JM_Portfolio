@@ -16,7 +16,8 @@ export default {
         'tan': '#D1B494',
         'maya-blue': '#85C4FF', 
 
-      }
+      } 
+      
     },
   },
   plugins: [
