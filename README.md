@@ -15,11 +15,11 @@ Stuff about:
 
 ### Todo's
 
-- dim background when side bar is open
-- add content collection data types, for reference purposes. 
-- add web3forms api key with correct email when Ive decided, and gitignore
-- implement light mode
-- add an open source free analytics, not google
-- finish music page 
++ dim background when side bar is open
++ add content collection data types, for reference purposes. 
++ add web3forms api key with correct email when Ive decided, and gitignore
++ implement light mode
++ add an open source free analytics, not google
++ finish music page 
 
 
