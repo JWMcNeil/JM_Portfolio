@@ -35,7 +35,9 @@ const { title, description, pubDate, status, heroImage } = Astro.props;
 							<p class="text-slate-500">Status: <span class="font-thin text-smoke-white">{status}</span></p>
 							<hr />
 						</div>
-						<slot />
+						<div class="prose-em:text-slate-500 prose-em:text-xs prose-strong:text-tan">
+							<slot />
+						</div>
 					</div>
 				</article>
 			</div>
