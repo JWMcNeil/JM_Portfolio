@@ -21,5 +21,6 @@ Stuff about:
 + implement light mode
 + add an open source free analytics, not google
 + finish music page 
++ add custom 404
 
 
