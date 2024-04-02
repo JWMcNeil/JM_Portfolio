@@ -22,5 +22,6 @@ Stuff about:
 + add an open source free analytics, not google
 + finish music page 
 + add custom 404
++ bring in all carousel sources into carousel component, spread them then map over them for slides 
 
 
